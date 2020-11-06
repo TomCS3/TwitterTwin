@@ -1,6 +1,6 @@
 # TwitterTwin
 
-Objective: To develop a twitter-like environment using Django and React JS.
+Objective: To develop a twitter-like environment using Django, REST API Framework, and React JS.
 
 Functions:
 
