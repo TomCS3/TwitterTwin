@@ -1,20 +1,22 @@
 
-from django.urls import path, re_path
-from django.contrib import admin
+from django.urls import path
 
-from . import views
-
+from .views import (
+    tweet_create_view,
+    tweet_list_view,
+    tweet_detail_view,
+    tweet_delete_view,
+    tweet_action_view,
+)
+"""
+Client
+Base ENDPOINT /api/tweets/
+"""
 
 urlpatterns = [
-    path("", views.index, name="index"),
-    path("login", views.login_view, name="login"),
-    path("logout", views.logout_view, name="logout"),
-    path("register", views.register, name="register"),
-    #path("admin/", admin.site.urls),
-
-    path('create-tweet', views.tweet_create_view),
-    path('tweets', views.tweet_list_view),
-    path('tweets/<int:tweet_id>', views.tweet_detail_view),
-    path('api/tweets/<int:tweet_id>/delete', views.tweet_delete_view),
-    path('api/tweets/action', views.tweet_action_view),
+    path('', tweet_list_view),
+    path('action/', tweet_action_view),
+    path('create/', tweet_create_view),
+    path('<int:tweet_id>/', tweet_detail_view),
+    path('<int:tweet_id>/delete/', tweet_delete_view),
 ]
