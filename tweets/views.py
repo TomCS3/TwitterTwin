@@ -25,7 +25,7 @@ from random import randint
 ALLOWED_HOSTS = settings.ALLOWED_HOSTS
 
 def index(request, *args, **kwargs):
-    return render(request, "twittertwin/index.html")
+    return render(request, "pages/index.html")
 
 @api_view(['POST'])
 # @authentication_classes([SessionAuthentication])
