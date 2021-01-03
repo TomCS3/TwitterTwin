@@ -25,7 +25,19 @@ from random import randint
 ALLOWED_HOSTS = settings.ALLOWED_HOSTS
 
 def index(request, *args, **kwargs):
-    return render(request, "pages/index.html")
+    username = None
+    if request.user.is_authenticated:
+        username = request.user.username
+    return render(request, "pages/index.html", context={"username": username}, status=200)
+
+def local_tweets_list_view(request, *args, **kwargs):
+    return render(request, "tweets/list.html")
+
+def local_tweets_detail_view(request, tweet_id, *args, **kwargs):
+    return render(request, "tweets/detail.html", context={"tweet_id": tweet_id})
+
+def local_tweets_profile_view(request, username, *args, **kwargs):
+    return render(request, "tweets/profile.html", context={"profile_username": username})
 
 @api_view(['POST'])
 # @authentication_classes([SessionAuthentication])
