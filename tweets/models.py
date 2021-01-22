@@ -16,8 +16,8 @@ class TweetQuerySet(models.QuerySet):
     def feed(self, user):
         profiles_exist = user.following.exists()
         followed_users_id = []
-        if profiles.exists():
-            followed_users_id = user.following.values.list("user__id", flat=True)
+        if profiles_exist:
+            followed_users_id = user.following.values_list("user__id", flat=True)
         return self.filter(
             Q(user__id__in=followed_users_id) |
             Q(user=user) 
