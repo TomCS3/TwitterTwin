@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {TweetsComponent, TweetDetailComponent} from './tweets';
+import {FeedComponent, TweetsComponent, TweetDetailComponent} from './tweets';
 
 const appEl = document.getElementById('root')
 if (appEl) {
@@ -14,6 +14,12 @@ const tweetsEl = document.getElementById('twittertwin')
 if (tweetsEl) {
   ReactDOM.render(
     e(TweetsComponent, tweetsEl.dataset), tweetsEl);
+}
+
+const tweetFeedEl = document.getElementById('twittertwin-feed')
+if (tweetFeedEl) {
+  ReactDOM.render(
+    e(FeedComponent, tweetFeedEl.dataset), tweetFeedEl);
 }
 
 const tweetDetailElements = document.querySelectorAll(".twittertwin-detail")
