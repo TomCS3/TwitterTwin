@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {ProfileBadgeComponent} from './profiles'
 import reportWebVitals from './reportWebVitals';
 import {FeedComponent, TweetsComponent, TweetDetailComponent} from './tweets';
 
@@ -27,6 +28,14 @@ const tweetDetailElements = document.querySelectorAll(".twittertwin-detail")
 tweetDetailElements.forEach(container => {
   ReactDOM.render(
     e(TweetDetailComponent, container.dataset), 
+    container);
+})
+
+const userProfileBadgeElements = document.querySelectorAll(".twittertwin-profile-badge")
+
+tweetDetailElements.forEach(container => {
+  ReactDOM.render(
+    e(ProfileBadgeComponent, container.dataset), 
     container);
 })
 
