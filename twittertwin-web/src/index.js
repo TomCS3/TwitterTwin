@@ -33,7 +33,7 @@ tweetDetailElements.forEach(container => {
 
 const userProfileBadgeElements = document.querySelectorAll(".twittertwin-profile-badge")
 
-tweetDetailElements.forEach(container => {
+userProfileBadgeElements.forEach(container => {
   ReactDOM.render(
     e(ProfileBadgeComponent, container.dataset), 
     container);
