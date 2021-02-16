@@ -15,9 +15,7 @@
     </head>
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-network mb-4">
-            <a class="navbar-brand" href="#">Network</a>
-        </nav>
+        {% include 'components/navbar.html' %}
         
         <div class="container">
             {% block content %}
@@ -27,3 +25,7 @@
         {% include 'react/js.html' %}
     </body>
 </html>
+
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-network mb-4">
+    <a class="navbar-brand" href="#">Network</a>
+</nav> -->
